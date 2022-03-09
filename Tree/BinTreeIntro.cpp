@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 using namespace std;
 class Node {
     public:
@@ -31,6 +32,27 @@ Node *buildTree(Node *root) {
     cout << " Entr the data for inserting in right " << endl;
     root -> right = buildTree(root -> right);
     return root;
+
+}
+
+void  levelOrderTraversal(Node *root) {
+    queue <Node> q;
+    q.push(root());
+
+    while (!q.empty()) 
+    {
+        
+        Node *temp = q.front();
+        q.pop();
+
+        if (temp -> left)
+        {
+            /* code */
+            q.push(temp -> left);
+        }
+        
+    }
+    
 
 }
 
